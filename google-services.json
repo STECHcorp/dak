@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1075820242177",
+    "project_id": "daksm-d80ac",
+    "storage_bucket": "daksm-d80ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075820242177:android:7b25e99efcfdfe867ce700",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075820242177-8cp9ggqe5n1vnjq0oqd4vch3416q481u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ceHpfgU1xNNakFASYtTmvphPun4_6tY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075820242177-8cp9ggqe5n1vnjq0oqd4vch3416q481u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
