@@ -5,4 +5,5 @@ enum NavigationItem {
   help,
   settings,
   logout,
+  updatePassword
 }

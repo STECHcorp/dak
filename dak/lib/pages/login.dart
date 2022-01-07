@@ -142,12 +142,16 @@ class _LoginState extends State<Login> {
             Row(children: [CheckboxWidget(), Text("Keep Login")]),
             Padding(
               padding: EdgeInsets.only(right: 10.0),
-              child: InkWell(
-                // onTap: () => viewModel.forgotPassword(context),
-                child: Container(
-                  width: 130,
-                  height: 40,
-                  child: Align(
+              child: Container(
+                width: 130,
+                height: 40,
+                child: Align(
+                  child: GestureDetector(
+                    onTap: () {
+                      final provider = Provider.of<NavigationProvider>(context,
+                          listen: false);
+                      provider.setNavigationItem(NavigationItem.updatePassword);
+                    },
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(

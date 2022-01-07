@@ -1,4 +1,5 @@
 import 'package:dak/constants.dart';
+import 'package:dak/pages/update_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dak/pages/help_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             fontFamily: fontFamily,
-            primaryColor: Colors.lightBlue[800],
+            primaryColor: Colors.white,
             textTheme: TextTheme(
               bodyText1: TextStyle(
                 fontSize: bodyFontSize,
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
               ),
             ).apply(
               bodyColor: textColorSub,
-              displayColor: Colors.blue,
+              displayColor: Colors.white,
             )),
         home: MainPage(),
       ));
@@ -70,6 +71,8 @@ class _MainPageState extends State<MainPage> {
         return Login();
       case NavigationItem.settings:
         return Setting();
+      case NavigationItem.updatePassword:
+        return UpdatePassword();
       default:
         return Dashboard();
     }
