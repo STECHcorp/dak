@@ -11,10 +11,6 @@ class ProfileDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: bgColor,
-        title: const Text("Profile"),
-      ),
       body: Container(
         color: bgColor,
         width: double.infinity,
@@ -28,8 +24,16 @@ class ProfileDesktop extends StatelessWidget {
               flex: 8,
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 20,
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () => Navigator.of(context).pop(),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
                   ),
                   CircleAvatar(
                     radius: 80.0,

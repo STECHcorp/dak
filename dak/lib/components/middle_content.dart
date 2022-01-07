@@ -14,7 +14,9 @@ class MiddleContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0, right: 18.0),
+      // padding: const EdgeInsets.only(bottom: 8.0, right: 18.0),
+      padding: const EdgeInsets.only(bottom: 5.0, right: 5.0),
+
       child: Container(
           child: Scrollbar(
         isAlwaysShown: false,
@@ -30,7 +32,7 @@ class MiddleContent extends StatelessWidget {
                     child: Row(
                       children: [
                         Flexible(
-                          flex: 7,
+                          flex: 8,
                           child: Container(
                             child: Row(children: [
                               MaterialButton(
@@ -105,8 +107,9 @@ class MiddleContent extends StatelessWidget {
                           flex: 2,
                           child: Container(
                             child: RaisedGradientButton(
-                                width:
-                                    screenWidth < 650 ? screenWidth * 0.2 : 200,
+                                width: screenWidth < 650
+                                    ? screenWidth * 0.15
+                                    : 200,
                                 key: Key('button'),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,

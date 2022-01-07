@@ -60,7 +60,7 @@ class _NewsfeedMobileState extends State<NewsfeedMobile> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',

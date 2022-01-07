@@ -1,7 +1,7 @@
+import 'package:dak/screens/help_desktop.dart';
+import 'package:dak/screens/help_mobile.dart';
 import 'package:flutter/material.dart';
-import 'package:dak/components/iframe_html.dart';
-import 'package:dak/components/menu.dart';
-import 'package:dak/utils/test.dart';
+import '../helper/responsive.dart';
 
 class HelpPage extends StatelessWidget {
   const HelpPage({Key? key}) : super(key: key);
@@ -10,34 +10,11 @@ class HelpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: bgColor,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: Container(margin: EdgeInsets.all(18), child: Menu()),
-            ),
-            Expanded(
-              flex: 8,
-              child: Container(
-                color: Colors.white,
-                child: Text(
-                  "Help",
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+    return Responsive(
+      key: const Key('Dashboard'),
+      mobile: HelpMobile(),
+      tablet: HelpDesktop(),
+      desktop: HelpDesktop(),
     );
-
-    // child: Responsive(
-    //   key: const Key('Setting'),
-    //   mobile: Mobile(),
-    //   tablet: Tablet(),
-    //   desktop: Desktop(),
-    // ),
   }
 }
