@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PostModel {
   String? id;
@@ -8,7 +8,7 @@ class PostModel {
   String? location;
   String? description;
   String? mediaUrl;
-  Timestamp? timestamp;
+  // Timestamp? timestamp;
 
   PostModel({
     this.id,
@@ -18,7 +18,7 @@ class PostModel {
     this.description,
     this.mediaUrl,
     this.username,
-    this.timestamp,
+    // this.timestamp,
   });
   PostModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -28,7 +28,7 @@ class PostModel {
     username = json['username'];
     description = json['description'];
     mediaUrl = json['mediaUrl'];
-    timestamp = json['timestamp'];
+    // timestamp = json['timestamp'];
   }
 
   Map<String, dynamic> toJson() {
@@ -40,7 +40,7 @@ class PostModel {
     data['description'] = this.description;
     data['mediaUrl'] = this.mediaUrl;
 
-    data['timestamp'] = this.timestamp;
+    // data['timestamp'] = this.timestamp;
     data['username'] = this.username;
     return data;
   }

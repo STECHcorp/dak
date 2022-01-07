@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
   String? username;
@@ -7,8 +7,8 @@ class UserModel {
   String? country;
   String? bio;
   String? id;
-  Timestamp? signedUpAt;
-  Timestamp? lastSeen;
+  // Timestamp? signedUpAt;
+  // Timestamp? lastSeen;
   bool? isOnline;
 
   UserModel(
@@ -16,9 +16,9 @@ class UserModel {
       this.email,
       this.id,
       this.photoUrl,
-      this.signedUpAt,
+      // this.signedUpAt,
       this.isOnline,
-      this.lastSeen,
+      // this.lastSeen,
       this.bio,
       this.country});
 
@@ -27,9 +27,9 @@ class UserModel {
     email = json['email'];
     country = json['country'];
     photoUrl = json['photoUrl'];
-    signedUpAt = json['signedUpAt'];
+    // signedUpAt = json['signedUpAt'];
     isOnline = json['isOnline'];
-    lastSeen = json['lastSeen'];
+    // lastSeen = json['lastSeen'];
     bio = json['bio'];
     id = json['id'];
   }
@@ -41,9 +41,9 @@ class UserModel {
     data['email'] = this.email;
     data['photoUrl'] = this.photoUrl;
     data['bio'] = this.bio;
-    data['signedUpAt'] = this.signedUpAt;
+    // data['signedUpAt'] = this.signedUpAt;
     data['isOnline'] = this.isOnline;
-    data['lastSeen'] = this.lastSeen;
+    // data['lastSeen'] = this.lastSeen;
     data['id'] = this.id;
 
     return data;
