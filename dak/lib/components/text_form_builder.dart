@@ -52,7 +52,7 @@ class _TextFormBuilderState extends State<TextFormBuilder> {
         children: [
           CustomCard(
             onTap: () {},
-            borderRadius: BorderRadius.circular(40.0),
+            borderRadius: BorderRadius.circular(8.0),
             child: Container(
               child: Theme(
                 data: ThemeData(
@@ -101,7 +101,7 @@ class _TextFormBuilderState extends State<TextFormBuilder> {
                         widget.suffix,
                         size: 15.0,
                       ),
-                      fillColor: lightBgColor,
+                      fillColor: bgColor,
                       filled: true,
                       hintText: widget.hintText,
                       hintStyle: TextStyle(
@@ -138,7 +138,7 @@ class _TextFormBuilderState extends State<TextFormBuilder> {
   border(BuildContext context) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(30.0),
+        Radius.circular(8.0),
       ),
       borderSide: BorderSide(
         color: subBgColor,
@@ -150,7 +150,7 @@ class _TextFormBuilderState extends State<TextFormBuilder> {
   focusBorder(BuildContext context) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(30.0),
+        Radius.circular(8.0),
       ),
       borderSide: BorderSide(
         color: textColor,

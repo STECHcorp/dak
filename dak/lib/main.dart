@@ -1,3 +1,4 @@
+import 'package:dak/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dak/pages/help_page.dart';
@@ -26,9 +27,19 @@ class MyApp extends StatelessWidget {
         title: title,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.lightBlue[800],
-        ),
+            fontFamily: fontFamily,
+            primaryColor: Colors.lightBlue[800],
+            textTheme: TextTheme(
+              bodyText1: TextStyle(
+                fontSize: bodyFontSize,
+              ),
+              bodyText2: TextStyle(
+                fontSize: bodyFontSize,
+              ),
+            ).apply(
+              bodyColor: textColorSub,
+              displayColor: Colors.blue,
+            )),
         home: MainPage(),
       ));
 }

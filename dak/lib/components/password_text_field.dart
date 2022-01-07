@@ -52,7 +52,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomCard(
-            borderRadius: BorderRadius.circular(40.0),
+            borderRadius: BorderRadius.circular(8.0),
             child: Container(
               child: Theme(
                 data: ThemeData(
@@ -106,7 +106,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
                         size: 15.0,
                       ),
                     ),
-                    fillColor: lightBgColor,
+                    fillColor: bgColor,
                     filled: true,
                     hintText: widget.hintText,
                     hintStyle: TextStyle(
@@ -144,7 +144,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
   border(BuildContext context) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(30.0),
+        Radius.circular(8.0),
       ),
       borderSide: BorderSide(
         color: lightBgColor,
@@ -156,7 +156,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
   focusBorder(BuildContext context) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(30.0),
+        Radius.circular(8.0),
       ),
       borderSide: BorderSide(
         color: textColor,

@@ -12,7 +12,7 @@ class ExampleAppBar extends StatelessWidget {
     return SafeArea(
       child: Container(
         padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             color: bgColor,
             borderRadius: const BorderRadius.only(
               bottomLeft: const Radius.circular(10.0),

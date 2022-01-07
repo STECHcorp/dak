@@ -1,3 +1,4 @@
+import 'package:dak/components/checkbox_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dak/components/password_text_field.dart';
@@ -23,32 +24,26 @@ class _LoginState extends State<Login> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
         children: [
-          SizedBox(height: 60.0),
-          Container(
-            height: 170.0,
-            width: MediaQuery.of(context).size.width,
-            child: Image.asset(
-              'images/Data_security_01.jpg',
-            ),
-          ),
-          SizedBox(height: 10.0),
+          SizedBox(height: 80.0),
           Center(
             child: Text(
-              'Welcome back!',
+              'Sign In Now!',
               style: TextStyle(
-                fontSize: 23.0,
-                fontWeight: FontWeight.w900,
+                color: textColor,
+                fontSize: h1Fonsize,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
+          SizedBox(height: 8.0),
           Center(
             child: Text(
-              'Log into your account and get started!',
+              'You have already an accout ?\nGreat sign in right!',
               style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.w300,
-                color: Colors.white,
+                fontSize: bodyFontSize,
+                fontWeight: FontWeight.w400,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(height: 25.0),
@@ -60,22 +55,18 @@ class _LoginState extends State<Login> {
             child: buildForm(context),
           ),
 
-          SizedBox(height: 10.0),
+          SizedBox(height: 152.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Don\'t have an account?'),
+              Text('Not a member?'),
               GestureDetector(
                 onTap: () {
                   // Navigator.of(context)
                   //     .push(CupertinoPageRoute(builder: (_) => Register()));
                 },
                 child: Text(
-                  'Sign up',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
-                  ),
+                  'Join Now',
                 ),
               ),
             ],
@@ -88,11 +79,25 @@ class _LoginState extends State<Login> {
   buildForm(
     BuildContext context,
   ) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Form(
       // key: viewModel.formKey,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
         children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Email / Phone Number ",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: bodyFontSize,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+          SizedBox(height: 8.0),
           TextFormBuilder(
             // enabled: !viewModel.loading,
             prefix: Icons.mail,
@@ -105,7 +110,20 @@ class _LoginState extends State<Login> {
             // focusNode: viewModel.emailFN,
             // nextFocusNode: viewModel.passFN,
           ),
-          SizedBox(height: 15.0),
+          SizedBox(height: 16.0),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Email / Phone Number ",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: bodyFontSize,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+          SizedBox(height: 8.0),
           PasswordFormBuilder(
             // enabled: !viewModel.loading,
             prefix: Icons.lock,
@@ -120,8 +138,9 @@ class _LoginState extends State<Login> {
             },
             // focusNode: viewModel.passFN,
           ),
-          Align(
-            child: Padding(
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Row(children: [CheckboxWidget(), Text("Keep Login")]),
+            Padding(
               padding: EdgeInsets.only(right: 10.0),
               child: InkWell(
                 // onTap: () => viewModel.forgotPassword(context),
@@ -132,23 +151,25 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0,
+                        color: textColorLight,
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 10.0),
+          ]),
+          SizedBox(height: 32.0),
           Container(
             height: 45.0,
-            width: 180.0,
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: ElevatedButton(
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
                 backgroundColor: MaterialStateProperty.all<Color>(
@@ -162,15 +183,152 @@ class _LoginState extends State<Login> {
                 provider.setNavigationItem(NavigationItem.dashboard);
               },
               child: Text(
-                'Log in'.toUpperCase(),
+                'Log in',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 12.0,
+                  fontSize: headingsFonsize,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               // onPressed: () => viewModel.login(context),
             ),
+          ),
+          SizedBox(height: 32.0),
+          Text(
+            "Or continue with",
+          ),
+          SizedBox(height: 24.0),
+          GridView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: screenWidth / 100,
+              crossAxisCount: 2,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0,
+            ),
+            children: [
+              Container(
+                height: 42.0,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      subBgColor,
+                    ),
+                  ),
+                  // highlightElevation: 4.0,
+                  onPressed: () {
+                    final provider =
+                        Provider.of<NavigationProvider>(context, listen: false);
+                    provider.setNavigationItem(NavigationItem.dashboard);
+                  },
+                  child: Text(
+                    'Google',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: headingsFonsize,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // onPressed: () => viewModel.login(context),
+                ),
+              ),
+              Container(
+                height: 42.0,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      subBgColor,
+                    ),
+                  ),
+                  // highlightElevation: 4.0,
+                  onPressed: () {
+                    final provider =
+                        Provider.of<NavigationProvider>(context, listen: false);
+                    provider.setNavigationItem(NavigationItem.dashboard);
+                  },
+                  child: Text(
+                    'Facebook',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: headingsFonsize,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // onPressed: () => viewModel.login(context),
+                ),
+              ),
+              Container(
+                height: 42.0,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      subBgColor,
+                    ),
+                  ),
+                  // highlightElevation: 4.0,
+                  onPressed: () {
+                    final provider =
+                        Provider.of<NavigationProvider>(context, listen: false);
+                    provider.setNavigationItem(NavigationItem.dashboard);
+                  },
+                  child: Text(
+                    'Twitter',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: headingsFonsize,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // onPressed: () => viewModel.login(context),
+                ),
+              ),
+              Container(
+                height: 42.0,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      subBgColor,
+                    ),
+                  ),
+                  // highlightElevation: 4.0,
+                  onPressed: () {
+                    final provider =
+                        Provider.of<NavigationProvider>(context, listen: false);
+                    provider.setNavigationItem(NavigationItem.dashboard);
+                  },
+                  child: Text(
+                    'Apple',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: headingsFonsize,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // onPressed: () => viewModel.login(context),
+                ),
+              ),
+            ],
           ),
         ],
       ),
