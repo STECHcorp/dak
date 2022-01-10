@@ -110,7 +110,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
                     filled: true,
                     hintText: widget.hintText,
                     hintStyle: TextStyle(
-                      color: textColor,
+                      color: textColorSub,
                     ),
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
                     border: border(context),

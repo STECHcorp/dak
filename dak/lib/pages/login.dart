@@ -235,7 +235,7 @@ class _LoginState extends State<Login> {
                     'Google',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: headingsFonsize,
+                      fontSize: bodyFontSize,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -265,7 +265,7 @@ class _LoginState extends State<Login> {
                     'Facebook',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: headingsFonsize,
+                      fontSize: bodyFontSize,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -295,7 +295,7 @@ class _LoginState extends State<Login> {
                     'Twitter',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: headingsFonsize,
+                      fontSize: bodyFontSize,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -325,7 +325,7 @@ class _LoginState extends State<Login> {
                     'Apple',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: headingsFonsize,
+                      fontSize: bodyFontSize,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
